@@ -2,6 +2,10 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px; 
+}
 .hero-section {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.1) 100%), url('/images/sany-sy18c-hero.webp');
     background-size: cover;
@@ -16,41 +20,39 @@ input:focus, textarea:focus {
     border-color: #FF6B00;
 }
 
-/* ZMIANA: STYLE DLA RESPONSYWNEGO MENU HAMBURGER */
-/* Ukryj hamburger i mobilne menu na desktopie */
+
 @media (min-width: 768px) {
-    #hamburgerButton { /* Zmieniono na ID */
+    #hamburgerButton { 
         display: none !important;
     }
-    #mobileMenu { /* Zmieniono na ID */
-        display: none !important; /* To menu mobilne, na desktopie ma być ukryte */
+    #mobileMenu { 
+        display: none !important; 
     }
     .desktop-menu {
-        display: flex !important; /* To menu desktopowe, na desktopie ma być widoczne */
+        display: flex !important; 
     }
 }
 
-/* Ukryj desktopowe menu na mobile i pokaż hamburger */
 @media (max-width: 767px) {
     .desktop-menu {
-        display: none !important; /* Na mobile menu desktopowe ma być ukryte */
+        display: none !important; 
     }
-    #hamburgerButton { /* Zmieniono na ID */
-        display: block !important; /* Na mobile hamburger ma być widoczny */
+    #hamburgerButton { 
+        display: block !important; 
     }
-    #mobileMenu { /* Zmieniono na ID */
-        display: none; /* Domyślnie ukryte menu mobilne, pokazywane przez JS */
+    #mobileMenu { 
+        display: none; 
         flex-direction: column;
         background-color: white;
         position: absolute;
-        top: 68px; /* Wysokość nagłówka */
+        top: 68px; 
         left: 0;
         width: 100%;
         box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         z-index: 1000;
         padding: 16px 0;
     }
-    #mobileMenu.open { /* Ta klasa jest dodawana/usuwana przez JS */
-        display: flex !important; /* Ważne, aby JS mógł pokazać menu */
+    #mobileMenu.open { 
+        display: flex !important; 
     }
 }
